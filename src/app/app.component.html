@@ -1,0 +1,63 @@
+<div class="loginForm" *ngIf="!userLoggedIn">
+  <h1>Welcome to My Notes, please login</h1>
+
+  <form>
+    <div class="formGroup">
+      <label for="username">Username: </label>
+      <input
+        [(ngModel)]="username"
+        name="username"
+        type="text"
+        [value]="username"
+      />
+    </div>
+    <div class="formGroup">
+      <label for="password">Password: </label>
+      <input
+        name="password"
+        [(ngModel)]="password"
+        type="password"
+        [value]="password"
+      />
+    </div>
+
+    <button (click)="formSubmit()">Login</button>
+  </form>
+</div>
+
+<div *ngIf="userLoggedIn" class="tasksContainer">
+  <h1>Welcome {{ loggedUser.username }}</h1>
+
+  <div class="tasks">
+    <h2 class="noTasksText" *ngIf="loggedUser.tasks.length === 0">
+      No hay tareas creadas
+    </h2>
+
+    <ul>
+      <li class="task" *ngFor="let task of loggedUser.tasks">
+        <h2>{{ task.title }}</h2>
+        <p>{{ task.description }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <button (click)="showModal = true" class="addTaskButton">+</button>
+</div>
+
+<div class="modal" *ngIf="showModal">
+  <form>
+    <div class="formGroup">
+      <label for="title">Title: </label>
+      <input [(ngModel)]="title" name="title" type="text" [value]="title" />
+    </div>
+    <div class="formGroup">
+      <label for="description">Description: </label>
+      <textarea
+        name="description"
+        [(ngModel)]="description"
+        [value]="description"
+      ></textarea>
+    </div>
+    <span (click)="showModal = false" class="close">X</span>
+  </form>
+</div>

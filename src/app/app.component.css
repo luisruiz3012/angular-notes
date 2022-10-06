@@ -1,0 +1,162 @@
+p {
+  font-family: Lato;
+}
+
+.loginForm {
+  background-image: url('https://img.freepik.com/free-vector/paper-note-memphis-brown-background_53876-99277.jpg?w=2000');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginForm > h1 {
+  position: absolute;
+  top: 15vh;
+}
+
+.loginForm form {
+  background-color: rgba(212, 212, 212, 0.623);
+  padding: 25px;
+  border-radius: 5px;
+}
+
+.formGroup {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup input {
+  width: 240px;
+  height: 32px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding-inline: 10px;
+}
+
+.formGroup label {
+  margin-bottom: 8px;
+}
+
+form button {
+  width: 100%;
+  height: 32px;
+  margin-top: 20px;
+  background-color: #ad8160a9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+form button:hover {
+  background-color: #d38c56a9;
+  cursor: pointer;
+}
+
+.tasksContainer {
+  background-image: url('https://img.freepik.com/fotos-premium/viejo-papel-vintage-envejecido-fondo-o-textura_34266-532.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.tasksContainer h1 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.tasks {
+  margin-top: 30px;
+  padding: 30px;
+}
+
+.tasks ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.noTasksText {
+  text-align: center;
+}
+
+.task {
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.692);
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+  border: 2px solid #ad8160a9;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.task h2 {
+  margin-bottom: 10px;
+}
+
+.addTaskButton {
+  height: 60px;
+  width: 60px;
+  background-color: #ad8160a9;
+  font-size: 20px;
+  border: 1px solid #c77f48a9;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.addTaskButton:hover {
+  background-color: #d38c56a9;
+  cursor: pointer;
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal form {
+  background-color: rgba(199, 199, 199, 0.856);
+  width: 400px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+  position: relative;
+}
+
+.modal > form textarea {
+  width: 240px;
+  height: 80px;
+  outline: none;
+  border: none;
+  padding: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+  font-weight: 800;
+  cursor: pointer;
+}
