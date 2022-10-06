@@ -18,6 +18,8 @@ p {
 .loginForm > h1 {
   position: absolute;
   top: 15vh;
+  font-family: 'Tangerine', serif;
+  font-size: 60px;
 }
 
 .loginForm form {
@@ -72,6 +74,8 @@ form button:hover {
 .tasksContainer h1 {
   text-align: center;
   padding-top: 30px;
+  font-family: 'Tangerine', serif;
+  font-size: 70px;
 }
 
 .tasks {
@@ -82,6 +86,7 @@ form button:hover {
 .tasks ul {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -98,10 +103,25 @@ form button:hover {
   border: 2px solid #ad8160a9;
   border-radius: 5px;
   padding: 10px;
+  position: relative;
+  transition: 300ms;
+}
+
+.task:hover {
+  transform: rotateZ(6.5deg) scale(1.1);
+  transition: 300ms;
+  display: block;
+  cursor: pointer;
+}
+
+.task:hover .showClose {
+  display: block;
 }
 
 .task h2 {
   margin-bottom: 10px;
+  font-family: 'Tangerine', serif;
+  font-size: 30px;
 }
 
 .addTaskButton {
@@ -111,7 +131,7 @@ form button:hover {
   font-size: 20px;
   border: 1px solid #c77f48a9;
   border-radius: 50%;
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
 }
@@ -132,10 +152,16 @@ form button:hover {
   align-items: center;
 }
 
+.modal h2 {
+  margin-bottom: 10px;
+  font-family: 'Tangerine', serif;
+  font-size: 40px;
+}
+
 .modal form {
   background-color: rgba(199, 199, 199, 0.856);
   width: 400px;
-  height: 300px;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,6 +178,10 @@ form button:hover {
   padding: 10px;
 }
 
+.buttonContainer {
+  width: 60%;
+}
+
 .close {
   position: absolute;
   top: 10px;
@@ -159,4 +189,8 @@ form button:hover {
   color: red;
   font-weight: 800;
   cursor: pointer;
+}
+
+.showClose {
+  display: none;
 }

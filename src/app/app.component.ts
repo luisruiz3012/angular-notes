@@ -72,4 +72,27 @@ export class AppComponent {
     this.loggedUser = foundUser;
     this.userLoggedIn = true;
   }
+
+  closeModal() {
+    this.showModal = false;
+    this.title = '';
+    this.description = '';
+  }
+
+  createTask() {
+    const newTask: Task = {
+      title: this.title,
+      description: this.description,
+    };
+
+    this.loggedUser.tasks.push(newTask);
+    this.title = '';
+    this.description = '';
+
+    this.closeModal();
+  }
+
+  deleteTask(id: number) {
+    this.loggedUser.tasks.splice(id, 1);
+  }
 }

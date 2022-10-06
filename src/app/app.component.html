@@ -1,7 +1,7 @@
 <div class="loginForm" *ngIf="!userLoggedIn">
   <h1>Welcome to My Notes, please login</h1>
 
-  <form>
+  <form class="">
     <div class="formGroup">
       <label for="username">Username: </label>
       <input
@@ -34,9 +34,10 @@
     </h2>
 
     <ul>
-      <li class="task" *ngFor="let task of loggedUser.tasks">
+      <li class="task" *ngFor="let task of loggedUser.tasks; index as i">
         <h2>{{ task.title }}</h2>
         <p>{{ task.description }}</p>
+        <span (click)="deleteTask(i)" class="close showClose">X</span>
       </li>
     </ul>
   </div>
@@ -46,6 +47,7 @@
 
 <div class="modal" *ngIf="showModal">
   <form>
+    <h2>Add a note</h2>
     <div class="formGroup">
       <label for="title">Title: </label>
       <input [(ngModel)]="title" name="title" type="text" [value]="title" />
@@ -58,6 +60,9 @@
         [value]="description"
       ></textarea>
     </div>
-    <span (click)="showModal = false" class="close">X</span>
+    <div class="buttonContainer">
+      <button (click)="createTask()" class="modalButton">Create</button>
+    </div>
+    <span (click)="closeModal()" class="close">X</span>
   </form>
 </div>
