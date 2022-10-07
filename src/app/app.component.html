@@ -47,14 +47,21 @@
 
 <div class="modal" *ngIf="showModal">
   <form>
-    <h2>Add a note</h2>
+    <h2>Add a task</h2>
     <div class="formGroup">
       <label for="title">Title: </label>
-      <input [(ngModel)]="title" name="title" type="text" [value]="title" />
+      <input
+        required
+        [(ngModel)]="title"
+        name="title"
+        type="text"
+        [value]="title"
+      />
     </div>
     <div class="formGroup">
       <label for="description">Description: </label>
       <textarea
+        required
         name="description"
         [(ngModel)]="description"
         [value]="description"

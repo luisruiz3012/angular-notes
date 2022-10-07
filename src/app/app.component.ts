@@ -85,6 +85,11 @@ export class AppComponent {
       description: this.description,
     };
 
+    if (this.title === '' || this.description === '') {
+      alert('Please enter a title and a description to create a task');
+      return;
+    }
+
     this.loggedUser.tasks.push(newTask);
     this.title = '';
     this.description = '';
